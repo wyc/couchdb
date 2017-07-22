@@ -13,7 +13,7 @@ License for the specific language governing permissions and limitations under
 the License.
 */
 pipeline {
-  /* no top-level agent; agents must be declared for each stage */
+  // no top-level agent; agents must be declared for each stage
   agent none
 
   environment {
