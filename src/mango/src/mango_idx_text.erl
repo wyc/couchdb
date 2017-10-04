@@ -325,6 +325,8 @@ indexable_fields(Fields, {op_or, Args}) when is_list(Args) ->
 indexable_fields(Fields, {op_not, {ExistsQuery, Arg}}) when is_tuple(Arg) ->
     Fields0 = indexable_fields(Fields, ExistsQuery),
     indexable_fields(Fields0, Arg);
+indexable_fields(Fields, {op_not, {ExistsQuery, false}}) ->
+    indexable_fields(Fields, ExistsQuery);
 
 indexable_fields(Fields, {op_insert, Arg}) when is_binary(Arg) ->
     Fields;
